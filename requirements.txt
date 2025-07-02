@@ -1,0 +1,5 @@
+sqlmodel
+fastapi
+fastapi[standard]
+pydantic
+python-dotenv
