@@ -1,6 +1,6 @@
-# BioSamples API
+# BioSamples Back
 
-Back-end service built with **FastAPI** (Python 3.10.18) and an embedded **SQLite** database stored in `data/`.
+Backend service built with **FastAPI** (Python 3.10.18) and an embedded **SQLite** database stored in `data/`.
 
 ---
 
