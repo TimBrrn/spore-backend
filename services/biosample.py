@@ -8,7 +8,7 @@ from models import BioSample
 from schemas.biosample import BioSampleCreate, BioSampleUpdate
 
 def create(session: Session, data: BioSampleCreate) -> BioSample:
-    sample = BioSample.model_validate(data)
+    sample = BioSample(**data.model_dump())
     session.add(sample)
     session.commit()
     session.refresh(sample)
@@ -17,6 +17,7 @@ def create(session: Session, data: BioSampleCreate) -> BioSample:
 def get_all(session: Session, page: int, size: int) -> List[BioSample]:
     stmt = (
         select(BioSample)
+        .order_by(BioSample.id)
         .options(selectinload(BioSample.comments))
         .offset((page - 1) * size)
         .limit(size)

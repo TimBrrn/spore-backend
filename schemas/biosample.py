@@ -13,13 +13,11 @@ class BioSampleBase(BaseModel):
 class BioSampleCreate(BioSampleBase):
     pass
 
-
 class BioSampleUpdate(BaseModel):
     sampling_location: Optional[str] = None
     sample_type:      Optional[str] = None
     sampling_date:    Optional[date]  = None
     sampling_operator:Optional[str]   = None
-    pass
 
 class BioSampleRead(BioSampleBase):
     id: int

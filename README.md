@@ -1,12 +1,12 @@
 # BioSamples Back
 
-Backend service built with **FastAPI** (Python 3.10.18) and an embedded **SQLite** database stored in `data/`.
+Backend service built with **FastAPI** (tested on Python 3.13.5; works on 3.10+) and an embedded **SQLite** database stored in `data/`.
 
 ---
 
 ## Prerequisites
 
-- Python 3.10.18
+- Python **3.10 or newer**
 - `virtualenv` or any tool that can create a local venv
 - `pip` 23+
 
@@ -16,7 +16,7 @@ Backend service built with **FastAPI** (Python 3.10.18) and an embedded **SQLite
 
 ```bash
 # 1. Create and activate a virtual environment
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 
 # 2. Install dependencies
