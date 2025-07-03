@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, status
 from sqlmodel import Session
 
 from database import get_session
+from models import Comment
 from schemas.comment import CommentCreate
 from services.comment import create
 
@@ -12,6 +13,5 @@ router = APIRouter()
 def add_comment(
     sample_id: int,
     data: CommentCreate,
-    session: Session = Depends(get_session),
-):
+    session: Session = Depends(get_session)) -> None:
     return create(session, sample_id, data)

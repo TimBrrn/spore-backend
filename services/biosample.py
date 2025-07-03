@@ -30,7 +30,7 @@ def get(session: Session, sample_id: int) -> BioSample:
     return sample
 
 def update(session: Session, sample_id: int, data: BioSampleUpdate) -> BioSample:
-    update_data = data.dict(exclude_unset=True)
+    update_data = data.model_dump(exclude_unset=True)
     if not update_data:
         return session.get(BioSample, sample_id)
     session.exec(

@@ -3,11 +3,7 @@ from sqlmodel import Session
 from models import Comment
 from schemas.comment import CommentCreate
 
-def create(
-        session: Session, 
-        sample_id: int, 
-        data: CommentCreate
-) -> Comment:
+def create(session: Session, sample_id: int, data: CommentCreate) -> Comment:
     comment = Comment(sample_id=sample_id, **data.dict())
     session.add(comment)
     session.commit()
