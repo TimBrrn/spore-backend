@@ -8,7 +8,7 @@ from models import BioSample
 from schemas.biosample import BioSampleCreate, BioSampleUpdate
 
 def create(session: Session, data: BioSampleCreate) -> BioSample:
-    sample = BioSample.model_validate(data)
+    sample = BioSample(**data.model_dump())
     session.add(sample)
     session.commit()
     session.refresh(sample)
